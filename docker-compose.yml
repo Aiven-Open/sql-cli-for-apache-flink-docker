@@ -1,0 +1,32 @@
+version: "2.2"
+services:
+  sql-client:
+    image: ftisiot/flink_sql_cli:1.12.0
+    depends_on:
+      - jobmanager
+    environment:
+      FLINK_JOBMANAGER_HOST: jobmanager
+    volumes:
+      - ~/kafkacerts/:/certs
+
+  jobmanager:
+    image: flink:1.12.0-scala_2.11
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+
+  taskmanager:
+    image: flink:1.12.0-scala_2.11
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    scale: 1
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2
