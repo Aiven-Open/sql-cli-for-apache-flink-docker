@@ -7,6 +7,7 @@ services:
     environment:
       FLINK_JOBMANAGER_HOST: jobmanager
 
+
   jobmanager:
     image: flink:1.12.0-scala_2.11
     ports:
@@ -32,3 +33,4 @@ services:
         taskmanager.numberOfTaskSlots: 2
     volumes:
       - ./settings/:/settings
+      - ./data/:/data
