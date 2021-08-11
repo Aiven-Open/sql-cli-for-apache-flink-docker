@@ -1,6 +1,6 @@
 # Apache Flink pure SQL Cli Image
 
-This docker-compose provides a Flink SQL CLI image updated to the 1.12.0 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
+This docker-compose provides a Flink SQL CLI image updated to the 1.13.2 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 It makes use of the `flink:1.13.2-scala_2.12` images and of the `ftisiot/flink-sql-client:1.13.2` which is based on the same `flink:1.13.2-scala_2.12` image.
 
