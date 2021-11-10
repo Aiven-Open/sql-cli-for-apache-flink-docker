@@ -39,6 +39,12 @@ Apache Flink Web UI is now available at `localhost:8081`
 
 To Access the SQL CLI, execute
 
+It could be done via one-line command
+```
+docker exec -it $(docker ps -qlf name=sql-cli-for-apache-flink-docker_sql-client) /opt/sql-client/sql-client.sh
+```
+
+Or step by step instructions
 ```
 docker ps
 ```
@@ -61,7 +67,7 @@ docker exec -it <CONTAINER_ID> /bin/bash
 Finally execute
 
 ```
-./sql-cli.sh
+./sql-client.sh
 ```
 
 This will popup Flink sql cli
