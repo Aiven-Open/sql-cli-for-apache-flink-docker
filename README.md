@@ -1,10 +1,10 @@
-# SQL CLI for Apache Flink on Docker®
+# SQL CLI for Apache Flink® on Docker®
 
 This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.13.2 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 It makes use of the `flink:1.13.2-scala_2.12` images and of the `ftisiot/flink-sql-client:1.13.2` which is based on the same `flink:1.13.2-scala_2.12` image.
 
-The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka).
+The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka®).
 
 ## Usage
 
@@ -122,4 +122,7 @@ Command history file path: /root/.flink-sql-history
 
 Flink SQL>
 ```
-Apache Kafka is either a registered trademark or trademark of the Apache Software Foundation in the United States and/or other countries. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation.
+
+## Trademarks
+
+Apache Kafka, Apache Flink are either registered trademarks or trademarks of the Apache Software Foundation in the United States and/or other countries.. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation. Docker is a trademark and property of their respective owners. All product and service names used in this website are for identification purposes only and do not imply endorsement.
