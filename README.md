@@ -122,4 +122,4 @@ Command history file path: /root/.flink-sql-history
 
 Flink SQL>
 ```
-Apache Flink is a registered trademark of The Apache Software Foundation and has been licensed for use by Aiven. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation.
+Apache Kafka is either a registered trademark or trademark of the Apache Software Foundation in the United States and/or other countries. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation.
