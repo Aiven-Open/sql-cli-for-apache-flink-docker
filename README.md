@@ -1,6 +1,6 @@
-# Apache Flink pure SQL Cli Image
+# SQL CLI for Apache Flink on Docker®
 
-This docker-compose provides a Flink SQL CLI image updated to the 1.13.2 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
+This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.13.2 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 It makes use of the `flink:1.13.2-scala_2.12` images and of the `ftisiot/flink-sql-client:1.13.2` which is based on the same `flink:1.13.2-scala_2.12` image.
 
@@ -122,3 +122,4 @@ Command history file path: /root/.flink-sql-history
 
 Flink SQL>
 ```
+Apache Flink is a registered trademark of The Apache Software Foundation and has been licensed for use by Aiven. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation.
