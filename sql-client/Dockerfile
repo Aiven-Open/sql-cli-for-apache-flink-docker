@@ -28,6 +28,7 @@ COPY bin/* /opt/sql-client/
 RUN mkdir -p /opt/sql-client/lib
 
 # Download connector libraries
+
 RUN wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7_2.12/1.14.3/flink-sql-connector-elasticsearch7_2.12-1.14.3.jar \
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka_2.12/1.14.3/flink-sql-connector-kafka_2.12-1.14.3.jar; \
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc_2.12/1.14.3/flink-connector-jdbc_2.12-1.14.3.jar; \
