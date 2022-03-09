@@ -6,10 +6,11 @@ services:
       - jobmanager
     environment:
       FLINK_JOBMANAGER_HOST: jobmanager
-
+    volumes:
+      - ./settings/:/settings
 
   jobmanager:
-    image: flink:1.14.3-scala_2.12
+    image: flink:1.14.3-scala_2.12-java8
     ports:
       - "8081:8081"
     command: jobmanager
@@ -18,10 +19,11 @@ services:
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
     volumes:
+      - ./settings/:/settings
       - ./data/:/data
 
   taskmanager:
-    image: flink:1.14.3-scala_2.12
+    image: flink:1.14.3-scala_2.12-java8
     depends_on:
       - jobmanager
     command: taskmanager
