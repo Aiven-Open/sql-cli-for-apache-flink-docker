@@ -1,7 +1,7 @@
 version: "2.2"
 services:
   sql-client:
-    image: tonyibbs/flink_sql-cli:1.14.4
+    image: ftisiot/flink_sql_cli:1.14.4
     depends_on:
       - jobmanager
     environment:
