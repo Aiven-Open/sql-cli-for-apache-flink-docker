@@ -1,10 +1,10 @@
 # SQL CLI for Apache Flink® on Docker®
 
 
-This docker-compose provides a Flink SQL CLI image updated to the 1.14.3 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
+This docker-compose provides a Flink SQL CLI image updated to the 1.15.0 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 
-It makes use of the `flink:1.14.3-scala_2.12` images and of the `ftisiot/flink-sql-client:1.14.3` which is based on the same `flink:1.14.3-scala_2.12` image.
+It makes use of the `flink:1.15.0-scala_2.12` images and of the `ftisiot/flink-sql-client:1.15.0` which is based on the same `flink:1.15.0-scala_2.12` image.
 
 The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka®).
 
@@ -55,9 +55,9 @@ And take note of the `CONTAINER_ID` related to the `ftisiot/flink_sql_cli:1.14.3
 
 ```
 CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                              NAMES
-af00e6ef943f   ftisiot/flink_sql_cli:1.12.0   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_sql-client_1
-22a459232385   flink:1.14.3-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_taskmanager_1
-8b4d5c087800   flink:1.14.3-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 0.0.0.0:8081->8081/tcp   flink_jobmanager_1
+af00e6ef943f   ftisiot/flink_sql_cli:1.15.0   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_sql-client_1
+22a459232385   flink:1.15.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_taskmanager_1
+8b4d5c087800   flink:1.15.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 0.0.0.0:8081->8081/tcp   flink_jobmanager_1
 ```
 
 Now execute the following code to enter the docker container in interactive mode
