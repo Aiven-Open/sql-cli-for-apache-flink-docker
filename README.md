@@ -51,7 +51,7 @@ To Access the SQL CLI, execute
 
 It could be done via one-line command
 ```
-docker exec -it $(docker ps -qlf name=sql-cli-for-apache-flink-docker_sql-client) /opt/sql-client/sql-client.sh
+docker exec -it sql-client /opt/sql-client/sql-client.sh
 ```
 
 Or step by step instructions

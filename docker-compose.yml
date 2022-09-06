@@ -1,6 +1,7 @@
 version: "2.2"
 services:
   sql-client:
+    container_name: 'sql-client'
     image: ftisiot/flink_sql_cli:1.15.0
     depends_on:
       - jobmanager
