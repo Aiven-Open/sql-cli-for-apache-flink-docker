@@ -8,6 +8,14 @@ It makes use of the `flink:1.15.0-scala_2.12` images and of the `ftisiot/flink-s
 
 The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka®).
 
+Includes the SQL connectors to:
+* [Elasticsearch® 7](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/1.15.0/flink-sql-connector-elasticsearch7-1.15.0.jar)
+* [Apache Kafka®](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.15.0/flink-sql-connector-kafka-1.15.0.jar)
+* [AVRO](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.15.0/flink-sql-avro-confluent-registry-1.15.0.jar)
+* [JDBC](https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/1.15.0/flink-connector-jdbc-1.15.0.jar)
+* [PostgreSQL 42.3.6](https://jdbc.postgresql.org/download/postgresql-42.3.6.jar)
+* [Flink Faker](https://github.com/knaufk/flink-faker/releases/download/v0.5.0/flink-faker-0.5.0.jar) allowing to [generate fake data](https://github.com/knaufk/flink-faker)
+
 ## Usage
 
 You need both [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed.
