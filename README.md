@@ -136,3 +136,8 @@ Flink SQL>
 ## Trademarks
 
 Apache Kafka, Apache Flink are either registered trademarks or trademarks of the Apache Software Foundation in the United States and/or other countries.. Aiven has no affiliation with and is not endorsed by The Apache Software Foundation. Docker is a trademark and property of their respective owners. All product and service names used in this website are for identification purposes only and do not imply endorsement.
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
