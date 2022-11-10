@@ -2,7 +2,9 @@ version: "2.2"
 services:
   sql-client:
     container_name: 'sql-client'
-    image: ftisiot/flink_sql_cli:1.15.0
+    build:
+      context: .
+      dockerfile: sql-client/Dockerfile
     depends_on:
       - jobmanager
     environment:
@@ -11,7 +13,7 @@ services:
       - ./settings/:/settings
 
   jobmanager:
-    image: flink:1.15.0-scala_2.12-java11
+    image: flink:1.16.0-scala_2.12-java11
     ports:
       - "8081:8081"
     command: jobmanager
@@ -24,7 +26,7 @@ services:
       - ./data/:/data
 
   taskmanager:
-    image: flink:1.15.0-scala_2.12-java11
+    image: flink:1.16.0-scala_2.12-java11
     depends_on:
       - jobmanager
     command: taskmanager

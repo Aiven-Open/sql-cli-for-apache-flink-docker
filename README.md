@@ -1,20 +1,20 @@
 # SQL CLI for Apache Flink® on Docker®
 
 
-This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.15.0 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
+This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.16.0 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 
-It makes use of the `flink:1.15.0-scala_2.12` images and of the `ftisiot/flink-sql-client:1.15.0` which is based on the same `flink:1.15.0-scala_2.12` image.
+It makes use of the `flink:1.16.0-scala_2.12` images and of the `ftisiot/flink-sql-client:1.16.0` which is based on the same `flink:1.16.0-scala_2.12` image.
 
 The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka®).
 
 Includes the SQL connectors to:
-* [Elasticsearch® 7](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/1.15.0/flink-sql-connector-elasticsearch7-1.15.0.jar)
-* [Apache Kafka®](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.15.0/flink-sql-connector-kafka-1.15.0.jar)
-* [AVRO](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.15.0/flink-sql-avro-confluent-registry-1.15.0.jar)
-* [JDBC](https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/1.15.0/flink-connector-jdbc-1.15.0.jar)
-* [PostgreSQL 42.3.6](https://jdbc.postgresql.org/download/postgresql-42.3.6.jar)
-* [Flink Faker](https://github.com/knaufk/flink-faker/releases/download/v0.5.0/flink-faker-0.5.0.jar) allowing to [generate fake data](https://github.com/knaufk/flink-faker)
+* [Elasticsearch® 7](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/1.16.0/flink-sql-connector-elasticsearch7-1.16.0.jar)
+* [Apache Kafka®](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.16.0/flink-sql-connector-kafka-1.16.0.jar)
+* [AVRO](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.16.0/flink-sql-avro-confluent-registry-1.16.0.jar)
+* [JDBC](https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/1.16.0/flink-connector-jdbc-1.16.0.jar)
+* [PostgreSQL 42.5.0](https://jdbc.postgresql.org/download/postgresql-42.5.0.jar)
+* [Flink Faker](https://github.com/knaufk/flink-faker/releases/download/v0.5.0/flink-faker-0.5.1.jar) allowing to [generate fake data](https://github.com/knaufk/flink-faker)
 
 ## Usage
 
@@ -63,9 +63,9 @@ And take note of the `CONTAINER_ID` related to the `ftisiot/flink_sql_cli:1.14.3
 
 ```
 CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                              NAMES
-af00e6ef943f   ftisiot/flink_sql_cli:1.15.0   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_sql-client_1
-22a459232385   flink:1.15.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_taskmanager_1
-8b4d5c087800   flink:1.15.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 0.0.0.0:8081->8081/tcp   flink_jobmanager_1
+af00e6ef943f   ftisiot/flink_sql_cli:1.16.0   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_sql-client_1
+22a459232385   flink:1.16.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 8081/tcp                 flink_taskmanager_1
+8b4d5c087800   flink:1.16.0-scala_2.12        "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   6123/tcp, 0.0.0.0:8081->8081/tcp   flink_jobmanager_1
 ```
 
 Now execute the following code to enter the docker container in interactive mode
