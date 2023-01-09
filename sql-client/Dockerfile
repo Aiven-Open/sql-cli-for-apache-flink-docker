@@ -24,7 +24,7 @@
 FROM flink:1.16.0-scala_2.12-java11
 
 # Create CLI lib folder
-COPY sql-client/bin/* /opt/sql-client/
+COPY ./sql-client/bin/* /opt/sql-client/
 RUN mkdir -p /opt/sql-client/lib
 
 # Download connector libraries
