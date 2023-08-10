@@ -28,17 +28,13 @@ COPY sql-client/bin/* /opt/sql-client/
 RUN mkdir -p /opt/sql-client/lib
 
 # Download connector libraries
-RUN wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/1.16.2/flink-sql-connector-elasticsearch7-1.16.2.jar; \
+RUN wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/3.0.1-1.17/flink-sql-connector-elasticsearch7-3.0.1-1.17.jar; \
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.17.1/flink-sql-connector-kafka-1.17.1.jar; \
-    wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/1.16.2/flink-connector-jdbc-1.16.2.jar; \
+    wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/3.1.1-1.17/flink-connector-jdbc-3.1.1-1.17.jar; \
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-json/1.7.1/flink-json-1.7.1.jar; \
-    wget -P /opt/sql-client/lib/ https://jdbc.postgresql.org/download/postgresql-42.6.0.jar; \
+    wget -P /opt/sql-client/lib/ https://jdbc.postgresql.org/download/postgresql-42.5.0.jar; \
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.17.1/flink-sql-avro-confluent-registry-1.17.1.jar; \
-    wget -P /opt/sql-client/lib/ https://github.com/knaufk/flink-faker/releases/download/v0.5.1/flink-faker-0.5.1.jar; \
-    wget -P /opt/sql-client/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-table-common/1.17.1/flink-table-common-1.17.1.jar; \
-    wget -P /opt/sql-client/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-table-api-scala_2.12/1.17.1/flink-table-api-scala_2.12-1.17.1.jar; \
-    wget -P /opt/sql-client/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-table-api-scala-bridge_2.12/1.17.1/flink-table-api-scala-bridge_2.12-1.17.1.jar; \
-    wget -P /opt/sql-client/lib/ https://repo1.maven.org/maven2/org/apache/flink/flink-table-planner_2.12/1.17.1/flink-table-planner_2.12-1.17.1.jar;
+    wget -P /opt/sql-client/lib/ https://github.com/knaufk/flink-faker/releases/download/v0.5.1/flink-faker-0.5.1.jar; 
 
 # Copy configuration
 COPY sql-client/conf/* /opt/flink/conf/
