@@ -1,18 +1,18 @@
 # SQL CLI for Apache Flink® on Docker®
 
 
-This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.16.0 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
+This docker-compose provides an Apache Flink® SQL CLI image updated to the 1.17.1 version. It's inspired by [this](https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client).
 
 
-It makes use of the `flink:1.16.0-scala_2.12` images and of the `ftisiot/flink-sql-client:1.16.0` which is based on the same `flink:1.16.0-scala_2.12` image.
+It makes use of the `flink:1.17.1-scala_2.12-java11` images.
 
 The `sql-client` service maps a `~/kafkacerts/` folder to `/certs` which can be used to create and pass files like Keystores when SSL authentication is needed (e.g. with Apache Kafka®).
 
 Includes the SQL connectors to:
-* [Elasticsearch® 7](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/1.16.0/flink-sql-connector-elasticsearch7-1.16.0.jar)
-* [Apache Kafka®](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.16.0/flink-sql-connector-kafka-1.16.0.jar)
-* [AVRO](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.16.0/flink-sql-avro-confluent-registry-1.16.0.jar)
-* [JDBC](https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/1.16.0/flink-connector-jdbc-1.16.0.jar)
+* [Elasticsearch® 7](ttps://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-elasticsearch7/3.0.1-1.17/flink-sql-connector-elasticsearch7-3.0.1-1.17.jar)
+* [Apache Kafka®](/opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka/1.17.1/flink-sql-connector-kafka-1.17.1.jar)
+* [AVRO](https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.17.1/flink-sql-avro-confluent-registry-1.17.1.jar)
+* [JDBC](https://repo.maven.apache.org/maven2/org/apache/flink/flink-connector-jdbc/3.1.1-1.17/flink-connector-jdbc-3.1.1-1.17.jar)
 * [PostgreSQL 42.5.0](https://jdbc.postgresql.org/download/postgresql-42.5.0.jar)
 * [Flink Faker](https://github.com/knaufk/flink-faker/releases/download/v0.5.0/flink-faker-0.5.1.jar) allowing to [generate fake data](https://github.com/knaufk/flink-faker)
 
@@ -20,7 +20,7 @@ Includes the SQL connectors to:
 
 You need both [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed.
 
-Clone the current repository, navigate to the `flink-sql-cli` folder, then execute
+Clone the current repository, navigate to the `sql-cli-for-apache-flink-docker` folder, then execute
 
 ```
 docker-compose up -d
@@ -38,7 +38,7 @@ The result should be similar to the below
 Name                      Command               State                Ports              
 -----------------------------------------------------------------------------------------------
 flink_jobmanager_1    /docker-entrypoint.sh jobm ...   Up      6123/tcp, 0.0.0.0:8081->8081/tcp
-flink_sql-client_1    /docker-entrypoint.sh            Up      6123/tcp, 8081/tcp              
+sql-client            /docker-entrypoint.sh            Up      6123/tcp, 8081/tcp              
 flink_taskmanager_1   /docker-entrypoint.sh task ...   Up      6123/tcp, 8081/tcp              
 ```
 
